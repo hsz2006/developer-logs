@@ -1,20 +1,23 @@
 #!/usr/bin/env python3
 """
-convert-obsidian-to-github.py
-==============================
-将 Obsidian .md 文件中的 callout 语法转换为 GitHub 兼容的 <details> 格式，
+push-note.py
+============
+将单个 Obsidian .md 文件中的 callout 语法转换为 GitHub 兼容的 <details> 格式，
 推送到远程仓库，然后本地自动还原为原始 Obsidian 版本。
 
 用法：
-    python convert-obsidian-to-github.py <文件路径> [--message "提交信息"]
+    python push-note.py <文件路径> [--message "提交信息"]
 
 示例：
-    python convert-obsidian-to-github.py "论文阅读/my-notes.md"
-    python convert-obsidian-to-github.py "论文阅读/my-notes.md" --message "发布新笔记"
+    python push-note.py "论文阅读/my-notes.md"
+    python push-note.py "论文阅读/my-notes.md" --message "发布新笔记"
 
 效果：
     GitHub 上  →  <details> 折叠块（所有平台可靠渲染）
     本地文件   →  原始 Obsidian callout（[!success]- 等语法保持不变）
+
+提示：
+    如果要一次处理整个文件夹，用 push-folder.py
 """
 
 import re
